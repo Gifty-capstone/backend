@@ -1,4 +1,4 @@
-import database from './app/database/models';
+import database from '../src/models';
 
 class UserService {
   static async getAUser(id) {
