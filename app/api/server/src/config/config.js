@@ -6,7 +6,7 @@ module.exports = {
 
   development: {
     database: 'gifty_backend_development',
-    username: 'brisa',
+    username: process.env.DB_USER,
     password: null,
     host: '127.0.0.1',
     dialect: 'postgres'
@@ -14,7 +14,7 @@ module.exports = {
 
   test: {
     database: 'gifty_backend_test',
-    username: 'brisa',
+    username: process.env.DB_USER,
     password: null,
     host: '127.0.0.1',
     dialect: 'postgres'

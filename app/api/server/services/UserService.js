@@ -12,6 +12,18 @@ class UserService {
       throw error;
     }
   }
+
+  static async getUserFriends(id) {
+    try {
+      const theUser = await database.User.findAll({
+        where: { id: Number(id) }
+      });
+
+      return friend;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 export default UserService;
