@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Friend.belongsTo(models.User, {
-        foreignKey: 'Userid',
+        foreignKey: 'userId',
         as: 'user'
       });
       Friend.belongsToMany(models.Gift, {
