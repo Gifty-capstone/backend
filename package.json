@@ -7,8 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "nodemon --exec babel-node ./app/api/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --exec babel-node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js" 
   },
   "repository": {
     "type": "git",
