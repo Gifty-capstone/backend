@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       status: {
-        type: Sequelize.ENUM('wishlist', 'purchased', 'gifted')
+        type: Sequelize.ENUM('wishlist', 'purchased', 'gifted'),
       },
       createdAt: {
         allowNull: false,

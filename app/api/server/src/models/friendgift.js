@@ -10,17 +10,13 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Gift.belongsToMany(models.Friend, {
-        through: 'FriendGift',
-        as: 'friends',
-        foreignKey: 'giftId'
-      });
+      // define association here
     }
-  };
+  }
   FriendGift.init({
     friendId: DataTypes.INTEGER,
     giftId: DataTypes.INTEGER,
-    status: DataTypes.ENUM('wishlist', 'purchased', 'gifted')
+    status: DataTypes.ENUM('wishlist', 'purchased', 'gifted'),
   }, {
     sequelize,
     modelName: 'FriendGift',
