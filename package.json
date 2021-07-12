@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
     "dev": "nodemon --exec babel-node ./app/api/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-node ./app/api/index.js"
+    "start": "node ./app/api/index.js"
   },
   "repository": {
     "type": "git",
