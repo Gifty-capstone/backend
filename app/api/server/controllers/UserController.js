@@ -25,7 +25,21 @@ class UserController {
       util.setError(404, error);
       return util.send(res);
     }
+  },
+
+  static async getUserFriends(req, res) {
+    const { id } = req.params;
+    return models.Friend
+      .findAll({
+        include: [{
+          model: models.Friend,
+          as: 'friends',
+          required: false,
+          attributes: ['id', 'name', 'birthday'],
+          order: ['birthday', 'DESC'], [{model: Friend, as: 'friends'}, 'birthday', 'DESC']
+        }],
+        where: { userId }
   }
-}
+});
 
 export default UserController;
