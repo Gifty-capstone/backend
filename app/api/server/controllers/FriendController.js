@@ -1,10 +1,10 @@
-import UserService from '../services/UserService';
+import FriendService from '../services/FriendService';
 import Util from '../utils/Utils';
 
 const util = new Util();
 
-class UserController {
-  static async getAUser(req, res) {
+class FriendController {
+  static async getAFriend(req, res) {
     const { id } = req.params;
 
     if (!Number(id)) {
@@ -13,12 +13,12 @@ class UserController {
     }
 
     try {
-      const theUser = await UserService.getAUser(id);
+      const theFriend = await FriendService.getAFriend(id);
 
-      if (!theUser) {
+      if (!theFriend) {
         util.setError(404, `Cannot find user with the id ${id}`);
       } else {
-        util.setSuccess(200, 'Found User', theUser);
+        util.setSuccess(200, 'Found Friend', theFriend);
       }
       return util.send(res);
     } catch (error) {
@@ -27,18 +27,18 @@ class UserController {
     }
   }
 
-  static async getFriends(req, res) {
+  static async getGifts(req, res) {
     const { id } = req.params;
     if (!Number(id)) {
       util.setError(400, 'Please input a valid numeric value');
       return util.send(res);
     }
     try {
-      const theUser = await UserService.getFriends(id);
-      if (!theUser) {
+      const theFriend = await FriendService.getGifts(id);
+      if (!theFriend) {
         util.setError(404, `Cannot find user with the id ${id}`);
       } else {
-        util.setSuccess(200, 'Found User', theUser);
+        util.setSuccess(200, 'Found Friend', theFriend);
       }
       return util.send(res);
     } catch (error) {
@@ -47,4 +47,4 @@ class UserController {
     }
   }
 }
-export default UserController;
+export default FriendController;
