@@ -6,22 +6,23 @@ module.exports = {
     username: process.env.DB_USER,
     password: null,
     host: '127.0.0.1',
-    dialect: 'postgres'
+    dialect: 'postgres',
   },
   test: {
     database: 'gifty_backend_test',
     username: process.env.DB_USER,
     password: null,
     host: '127.0.0.1',
-    dialect: 'postgres'
+    dialect: 'postgres',
   },
   production: {
-    username: process.env.DB_USER,
-    password: null,
-    database: "gifty_backend_production",
-    host: "localhost",
-    dialect: "postgres",
-    operatorsAliases: false,
-    use_env_variable: process.env.DATABASE_URL
-  }
+    use_env_variable: 'DATABASE_URL',
+    dialectOptions: {
+      ssl: {
+        require: false,
+        rejectUnauthorized: false,
+      },
+    },
+    dialect: 'postgres',
+  },
 };
