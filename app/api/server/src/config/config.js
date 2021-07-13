@@ -18,9 +18,7 @@ module.exports = {
   production: {
     username: process.env.DB_USER,
     password: null,
-    database: 'gifty_backend__production',
-    host: '127.0.0.1',
-    dialect: 'postgres',
+    database: 'gifty_backend_production',
     host: '127.0.0.1',
     dialect: 'postgres',
     use_env_variable: 'DATABASE_URL',
