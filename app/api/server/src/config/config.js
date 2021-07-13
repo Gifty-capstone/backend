@@ -16,12 +16,12 @@ module.exports = {
     dialect: 'postgres'
   },
   production: {
-    url: process.env.DATABASE_URL,
-    dialect: 'postgres',
-    // database: process.env.DB_NAME,
-    // username: process.env.DB_USER,
-    // password: process.env.DB_PASS,
-    // host: process.env.DATABASE_URL,
-    // dialect: 'postgres'
+    username: process.env.DB_USER,
+    password: null,
+    database: "gifty_backend_production",
+    host: "localhost",
+    dialect: "postgres",
+    operatorsAliases: false,
+    use_env_variable: process.env.DATABASE_URL
   }
 };
