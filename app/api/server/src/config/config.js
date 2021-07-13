@@ -16,13 +16,13 @@ module.exports = {
     dialect: 'postgres',
   },
   production: {
-    use_env_variable: 'DATABASE_URL',
-    dialectOptions: {
-      ssl: {
-        require: false,
-        rejectUnauthorized: false,
-      },
-    },
+    username: process.env.DB_USER,
+    password: null,
+    database: 'gifty_backend__production',
+    host: '127.0.0.1',
     dialect: 'postgres',
+    host: '127.0.0.1',
+    dialect: 'postgres',
+    use_env_variable: 'DATABASE_URL',
   },
 };
